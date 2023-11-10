@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="/CSS/styles.css">
+        <!--BOXICONS CSS-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="Icon" type="image/x-icon" href="../../IMG/LogoFavicon.svg">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Personal-EIM</title>
+    </head>
+    <body class="h-screen">
+        <nav class="sidebar fixed top-0 left-0 h-full w-72 py-2 px-4 font-medium text-base close z-50">
+            <header class="flex items-center relative">
+                <div class="image-text flex items-center">
+                        <span class="image">
+                            <img src="/IMG/logo trans.svg" alt="Logo_CPM" 
+                            class="logo bg-indigo-800 w-14 rounded-lg p-1 flex items-center justify-center">
+                        </span>
+                        <div class="text header-text font-medium text-base flex flex-col">
+                                <span class="name font-semibold">Admin Panel - GMP</span>
+                                <span class="Funcion">Personal</span>
+                        </div>
+        
+                        <i class='arrow bx bx-chevron-right toggle absolute top-1/2 -right-7 -translate-y-2.5
+                        h-6 w-6 flex items-center justify-center rounded-xl text-base'></i> 
+                    </div>
+            </header>
+    
+            <div class="menu-bar flex flex-col justify-between">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="search-box h-12 mt-2 list-none flex items-center rounded-r-md rounded-l-md">
+                            <h2 class="pl-1" id="nameBienvenida">
+                                
+                            </h2>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/planillas/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Planillas">
+                                <i class='icon icon2 bx bx bx-spreadsheet text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Planillas</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/usuarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Usuarios">
+                                <i class='icon icon2 bx bxs-user-detail text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Usuarios</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center bg-indigo-800 rounded-lg">
+                            <a href="/personal/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Personal EIM">
+                                <i class='icon icon2 bx bxs-user-account text-xl flex items-center justify-center text-white'> </i>
+                                <span class="text nav-text text-white">Personal EIM</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/salarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Salarios">
+                                <i class='icon icon2 bx bx-money-withdraw text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Tablas de Salarios</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/notificaciones/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Notificaciones">
+                                <i class='icon icon2 bx bx-bell text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Notificaciones</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bottom-content">
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="http://localhost:4000/" class="decoration-transparent h-full rounded-md flex items-center w-full " title="Salir">
+                            <i class='icon icon2 bx bx-log-out text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Salir</span>
+                        </a>
+                    </li>
+    
+                    <li class="mode nav-link h-12 mt-2 list-none flex items-center -mr-1 relative rounded-md">
+                        <div class="moon-sun h-12 w-14 flex items-center">
+                            <i class='icon icon2 moon bx bx-moon text-xl flex items-center justify-center absolute'> </i>
+                            <i class='icon icon2 sun bx bx-sun text-xl flex items-center justify-center absolute opacity-0'> </i>
+                        </div>
+                        <span class="mode-text text ">Dark Mode</span>
+    
+                        <div class="toggle-switch h-full flex items-center justify-center cursor-pointer right-0 rounded-r-md rounded-l-md">
+                            <span class="switch rounded-3xl before:h-4 before:w-4 before:absolute before:rounded-full before:top-1/2
+                            before:left-1 before:transform before:-translate-y-1/2"></span>
+                        </div>
+                    </li>
+                </div>
+            </div>
+    
+        </nav>
+    
+    <section id="section" class="home h-full relative p-0 sm:p-2">
+        <div class="sm:ml-2 rounded-md h-screen">
+
+            <div class="text text-2xl font-semibold py-5 px-16 flex text-center justify-center uppercase">
+                Personal de la EIM
+            </div>
+    
+            <div class="flex  mx-auto text-center justify-center mt-10">
+    
+                <div class="flex flex-col text-center justify-start pb-9">
+                    
+                    <div class=" mr-2 text-center flex justify-start my-auto">
+                        <i class='bx bx-filter-alt my-auto text-2xl font-semibold text-indigo-950'></i>
+                        <p class="flex justify-center text-center my-auto font-medium">
+                            Filtrar CI:
+                        </p>
+                    </div>
+                    <input type="text" id="buscarCedula" required placeholder="Buscar Cédula" 
+                    class="p-1 border-none h-10 rounded-md focus:border-8 focus:border-indigo-900">
+        
+                </div>
+                
+                <div class="ml-5 sm:ml-8 my-auto" title="Registrar nuevo talento">
+                    <button id="agregarPersonal" class="flex flex-row mx-auto sm:mx-0 font-medium text-sm md:text-base p-1.5 sm:p-2 md:p-2.5 text-white bg-indigo-950 rounded-md">
+                        <i class='bx bx-user-plus text-base sm:text-lg my-auto mx-auto mr-0 md:mr-2'></i>
+                        <span class="hidden my-auto md:flex">Agregar</span>
+                    </button>
+                </div>
+                
+            </div>
+              <!-- FORMULARIO PARA AGREGAR NUEVO PROFESOR -->
+            <dialog id="modalAgregar" class="rounded-lg bg-indigo-100 border-2 border-indigo-300/50 shadow-md transition-all duration-[3000] backdrop:backdrop-blur-[2px]
+                                            md:w-5/12 lg:w-6/12 lg:h-4/6">
+                <div id="closeModal" 
+                    title="Cerrar"
+                    class="block text-end my-auto mt-1 sm:mt2 mr-1 sm:mr-3">
+                    <i class='bg-indigo-950/90 p-1 py-0 rounded-lg bx bx-x text-2xl text-white m-1 cursor-pointer hover:bg-indigo-800/70 
+                    hover:text-white hover:shadow-inner active:bg-blue-950'></i>
+                </div>
+                <form id="formAgregarPersona" class="h-auto mx-auto md:w-11/12 p-2 flex flex-col justify-around text-center transition-all duration-300">
+    
+                    <div class="flex flex-col justify-evenly my-3 py-2 md:my-2 h-12 min-h-[h-8]">
+                        <label for="namePersonal" class="flex flex-row text-base justify-center sm:justify-normal text-indigo-950 font-semibold w-full uppercase">
+                            Nombre y Apellido:
+                        </label>
+                        <input type="text"
+                         name="namePersonal" 
+                         id="namePersonal"
+                         placeholder="Nombre y apellido"
+                         autocomplete="off"
+                         required
+                         class="border-none outline-none text-center sm:text-start p-1 rounded-md bg-slate-50 text-base font-medium text-indigo-950 capitalize w-full lg:5/12">
+                    </div>
+    
+                    <div class="flex flex-col justify-evenly my-3 py-2 md:my-2 h-12 min-h-[h-8]">
+                        <label for="cedulaPersonal" class="flex flex-row text-base justify-center sm:justify-normal text-indigo-950 font-semibold w-full uppercase">
+                            Cédula: 
+                        </label>
+                        <input type="text"
+                        name="cedulaPersonal"
+                        id="cedulaPersonal"
+                        placeholder="N° CI"
+                        required
+                        class="border-none outline-none text-center sm:text-start p-1 rounded-md bg-slate-50 text-base font-medium text-indigo-950 w-full lg:5/12">
+                    </div>
+    
+                    <div class="flex flex-col justify-evenly my-3 py-2 md:my-2 h-12 min-h-[h-8]">
+                        <label for="departamentoPersonal" class="flex flex-row text-base justify-center sm:justify-normal text-indigo-950 font-semibold w-full uppercase">
+                            Departamento:
+                        </label>
+                        <select name="departamentoPersonal" id="departamentoPersonal" class="border-none outline-none p-1 rounded-md bg-slate-50 text-base 
+                                                                                             font-base text-indigo-950 w-full lg:5/12 text-center sm:text-start">
+                                <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900" selected>Seleccionar</option>
+                                <option value="716000" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ADMINISTRATIVO</option>
+                                <option value="716020" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ALEMÁN</option>
+                                <option value="716030" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">FRANCÉS</option>
+                                <option value="716040" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">INGLÉS</option>
+                                <option value="716050" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ITALIANO</option>
+                                <!-- <option value="716060" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">RUSO</option> -->
+                                <option value="716070" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ESTUDIOS GENERALES</option>
+                                <option value="716080" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">PORTUGUÉS</option>
+                                <option value="716090" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">TRADUCCIÓN E INTERPRETACIÓN</option>
+                        </select>
+                    </div>
+    
+                    <div class="flex flex-col justify-evenly my-3 py-2 md:my-2 h-12 min-h-[h-8]">
+                        <label for="catedraPersonal" class="flex flex-row text-base justify-center sm:justify-normal text-indigo-950 font-semibold w-full uppercase">
+                            cátedra:
+                        </label>
+                        <select name="catedraPersonal" id="catedraPersonal" class="border-none outline-none p-1 rounded-md bg-slate-50 text-base 
+                                                                                   font-base text-indigo-950 w-full lg:5/12 text-center sm:text-start">
+                            <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950" selected>Seleccionar</option>
+                                <option value="716020100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">IDIOMA BÁSICO</option>
+                                <option value="716020200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CULTURA DE ALEMÁN</option>
+                                <option value="716020300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">GRAMATICA Y ESPECIALIZACIÓN</option>
+                                <option value="716030100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">IDIOMA BÁSICO</option>
+                                <option value="716030200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CULTURA</option>
+                                <option value="716030300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">GRAMÁTICA Y ESPECIALIZACIÓN</option>
+                                <option value="716040100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">IDIOMA BÁSICO</option>
+                                <option value="716040200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CULTURA</option>
+                                <option value="716040300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">GRAMÁTICA Y ESPECIALIZACIÓN</option>
+                                <option value="716050100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">IDIOMA BÁSICO</option>
+                                <option value="716050200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CULTURA</option>
+                                <option value="716050300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">GRAMÁTICA DEL ITALIANO</option>
+                                <!-- <option value="716060100" class="hidden font-normal text-sm pl-1 bg-slate-50 text-indigo-950">RUSO IDIOMA BÁSICO</option>
+                                <option value="716060200" class="hidden font-normal text-sm pl-1 bg-slate-50 text-indigo-950">RUSO CULTURA</option>
+                                <option value="716060300" class="hidden font-normal text-sm pl-1 bg-slate-50 text-indigo-950">RUSO GRAMÁTICA Y ESPECIALIZACIÓN</option> -->
+                                <option value="716070100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">LINGüÍSTICA</option>
+                                <option value="716070200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">LENGUA ESPAÑOLA</option>
+                                <option value="716070300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASIGNATURAS INSTRUMENTALES</option>
+                                <option value="716080100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">IDIOMA BÁSICO</option>
+                                <option value="716080200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CULTURA</option>
+                                <option value="716080300" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">GRAMÁTICA Y ESPECIALIZACIÓN</option>
+                                <option value="716090100" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">TRADUCCIÓN</option>
+                                <option value="716090200" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INTERPRETACIÓN</option>
+                        </select>
+                    </div>
+    
+                    <div class="flex flex-col justify-evenly my-3 py-2 md:my-2 h-12 min-h-[h-8]">
+                        <label for="idacPersonal" class="flex flex-row text-base justify-center sm:justify-normal text-indigo-950 font-semibold w-full uppercase">
+                            Idac: 
+                        </label>
+                        <input type="text"
+                        name="idacPersonal"
+                        id="idacPersonal"
+                        placeholder="N° Idac"
+                        required
+                        class="border-none outline-none p-1 text-center sm:text-start rounded-md bg-slate-50 text-base font-medium text-indigo-950 w-full lg:5/12">
+                    </div>
+
+                    <div id="spinner" class="hidden h-auto my-2 text-center justify-center">
+                        <i class='bx bx-loader-alt text-indigo-950 font-semibold md:text-lg lg:text-2xl transition-all animate-spin'></i>                    
+                    </div>
+                    <div id="msjSuccess" class="hidden h-auto my-2">
+                        <h2 class="bg-green-400 text-green-950 p-3 text-center my-2 mx-auto rounded-md font-semibold text-xs sm:text-lg">¡Registro Exitoso!</h2>
+                    </div>
+                    <div id="msjError" class="hidden h-auto my-2">
+                        <h2 class="bg-red-300 text-red-950 p-3 text-center my-2 mx-auto rounded-md font-semibold text-xs sm:text-lg">¡Error en Regístro!</h2>
+                    </div>
+    
+                    <button id="btnAgregarPersonalModal" 
+                    type="submit"
+                    class="font-medium text-base p-2.5 text-white bg-indigo-950 rounded-md mt-4 mb-2 w-8/12 mx-auto
+                    hover:bg-indigo-800/70 hover:text-white hover:shadow-inner active:bg-blue-900/60">
+                        Nuevo Registro
+                    </button>
+    
+                </form>
+            </dialog>
+             <!-- FIN FORMULARIO PARA AGREGAR NUEVO PROFESOR -->
+            
+            <div id="mensajeError" class="hidden mx-auto text-center justify-around my-3 p-2 bg-red-400/70 text-red-950 border-2 border-red-950/70 rounded-lg">
+                <h2 class="text-base">Debe llenar el campo cédula</h2>
+            </div>
+    
+            <div id="listadoPersonal" class="flex flex-row justify-between text-center bg-indigo-950 h-20 rounded-md mx-auto mt-5 md:w-11/12">
+
+                <div class="hidden sm:flex flex-col justify-center text-center mx-.5 px-.5 sm:px-0 sm:mx-2 md:mx-4 md:ml-6 md:pl-8">
+                    <h2 class="uppercase text-xs md:text-sm lg:text-base text-white">Escuela</h2>
+                    <p></p>
+                </div>
+                <div class="flex flex-col my-auto justify-center text-center mx-.5 px-.5 sm:px-0 sm:mx-2 md:pr-6">
+                    <h2 class="flex sm:hidden uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Nombre</h2>
+                    <h2 class="hidden sm:flex uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Nombre y Apellido</h2>
+                    <p></p>
+                </div>
+                <div class="flex flex-col my-auto justify-center text-center mx-.5 px-.5 md:pr-10">
+                    <h2 class="flex sm:hidden uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">CI</h2>
+                    <h2 class="hidden sm:flex uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Cédula</h2>
+                    <p></p>
+                </div>
+                <div class="flex flex-col my-auto justify-center text-center mx-.5 px-.5 sm:px-0 sm:mx-2 md:mx-4">
+                    <h2 class="uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Departamento</h2>
+                    <p></p>
+                </div>
+                <div class="flex flex-col my-auto justify-center text-center mx-.5 px-.5 sm:px-0 sm:mx-2 md:pl-10">
+                    <h2 class="uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Idac</h2>
+                    <p></p>
+                </div>
+                <div class="flex flex-col my-auto justify-center text-center mx-.5 px-.5 sm:px-0 sm:mx-2 md:pr-6">
+                    <h2 class="uppercase text-[0.68rem] sm:text-xs md:text-sm lg:text-base text-white">Acciones</h2>
+                    <p></p>
+                </div>
+            </div>
+
+            <div id="containPersonal" class="lg:w-full mx-auto flex flex-col justify-between lg:max-w-screen-xl">
+            </div>
+            
+
+        </div>
+
+    </section>
+    
+    <script src="../styles.js"></script>
+    <script src="index.js" type="module"></script>
+    <script src="../components/notificaciones.js" type="module"></script>
+</body>
+</html>

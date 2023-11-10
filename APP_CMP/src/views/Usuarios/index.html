@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <!--BOXICONS CSS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="Icon" type="image/x-icon" href="/IMG/LogoFavicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Usuarios</title>
+</head>
+    <body class="h-screen">
+        <nav class="sidebar fixed top-0 left-0 h-full w-72 py-2 px-4 font-medium text-base close z-50">
+            <header class="flex items-center relative">
+                <div class="image-text flex items-center">
+                        <span class="image">
+                            <img src="/IMG/logo trans.svg" alt="Logo_CPM" 
+                            class="logo bg-indigo-800 w-14 rounded-lg p-1 flex items-center justify-center">
+                        </span>
+                        <div class="text header-text font-medium text-base flex flex-col">
+                                <span class="name font-semibold">Admin Panel - GMP</span>
+                                <span class="Funcion">Personal</span>
+                        </div>
+        
+                        <i class='arrow bx bx-chevron-right toggle absolute top-1/2 -right-7 -translate-y-2.5
+                        h-6 w-6 flex items-center justify-center rounded-xl text-base'></i> 
+                    </div>
+            </header>
+    
+            <div class="menu-bar flex flex-col justify-between">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="search-box h-12 mt-2 list-none flex items-center rounded-r-md rounded-l-md">
+                            <h2 class="pl-1" id="nameBienvenida">
+                                
+                            </h2>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/planillas/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Planillas">
+                                <i class='icon icon2 bx bx bx-spreadsheet text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Planillas</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center bg-indigo-800 rounded-lg">
+                            <a href="/usuarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Usuarios">
+                                <i class='icon icon2 bx bxs-user-detail text-xl flex items-center justify-center text-white'> </i>
+                                <span class="text nav-text text-white">Usuarios</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/personal/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Personal EIM">
+                                <i class='icon icon2 bx bxs-user-account text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Personal EIM</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/salarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Salarios">
+                                <i class='icon icon2 bx bx-money-withdraw text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Tablas de Salarios</span>
+                            </a>
+                        </li>
+                        <li class="nav-link h-12 mt-2 list-none flex items-center">
+                            <a href="/notificaciones/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Notificaciones">
+                                <i class='icon icon2 bx bx-bell text-xl flex items-center justify-center'> </i>
+                                <span class="text nav-text">Notificaciones</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bottom-content">
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="http://localhost:4000/" class="decoration-transparent h-full rounded-md flex items-center w-full " title="Salir">
+                            <i class='icon icon2 bx bx-log-out text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Salir</span>
+                        </a>
+                    </li>
+    
+                    <li class="mode nav-link h-12 mt-2 list-none flex items-center -mr-1 relative rounded-md">
+                        <div class="moon-sun h-12 w-14 flex items-center">
+                            <i class='icon icon2 moon bx bx-moon text-xl flex items-center justify-center absolute'> </i>
+                            <i class='icon icon2 sun bx bx-sun text-xl flex items-center justify-center absolute opacity-0'> </i>
+                        </div>
+                        <span class="mode-text text ">Dark Mode</span>
+    
+                        <div class="toggle-switch h-full flex items-center justify-center cursor-pointer right-0 rounded-r-md rounded-l-md">
+                            <span class="switch rounded-3xl before:h-4 before:w-4 before:absolute before:rounded-full before:top-1/2
+                            before:left-1 before:transform before:-translate-y-1/2"></span>
+                        </div>
+                    </li>
+                </div>
+            </div>
+    
+        </nav>
+
+    <section id="section" class="home h-screen relative">
+        <div class="text text-2xl font-medium py-5 px-16 flex text-center justify-center">Nueva Solicitud de Movimiento de Personal</div>
+    </section>
+
+    <footer class="p-0 h-10">
+        <p
+          class="bg-indigo-950 text-indigo-50 text-sm text-center py-3 font-bold">
+          Sistema-GMP. &copy;
+        </p>
+    </footer>
+
+    <script src="../styles.js"></script>
+    <script src="/CSS/styles.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="Icon" type="image/x-icon" href="/IMG/LogoFavicon.svg" />
+    <title>Sistema-GMP</title>
+  </head>
+  <body>
+    <main class="pagina_inicial min-h-screen">
+      <div id="navContent" class="p-2 items-center justify-center">
+        <nav
+          id="navegacion"
+          class="flex h-24 px-6 py-2 justify-between text-center rounded-md transition mx-auto">
+        </nav>
+      </div>
+
+      <div class="w-10/12 m-auto pt-4 sm:flex flex-col font-serif">
+
+        <h1 class="text-indigo-50 tracking-wider pb-4 text-xl text-center uppercase justify-center rounded-md font-bold md:font-semibold py-6 lg:text-3xl">
+          Sistema de Información y Movimiento de Personal
+        </h1>
+
+        <div class="cards flex flex-row justify-center text-center mt-8 mx-5">
+          <div class="card border-2 border-red-600 rounded-lg shadow-xl bg-clip-padding m-5 flex p-2">
+            <div class="card1 flex flex-col sm:flex-row flex-grow flex-shrink bg-indigo-950/95 rounded-lg shadow-xl">
+              <div class="m-auto p-2">
+                <img
+                  src="/IMG/UCV.png"
+                  alt="card 2"
+                  class="w-72 m-1 mb-3 md:w-52 md:p-1"/>
+              </div>
+              <div class="md:max-w-2xl flex justify-center my-auto md:mx-auto">
+                <p class="text-white text-lg text-center p-2 px-2 font-bold md:text-xl md:tracking-wider">
+                  Podrás administrar el flujo de la planilla de movimiento del
+                  personal de la EIM y conformar el expediente del personal
+                  docente
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  
+    <footer class="p-0 border border-t-2 border-indigo-950 h-10">
+      <p
+        class="bg-indigo-950 text-indigo-50 text-sm text-center py-3 font-bold">
+        Sistema-GMP. &copy;
+      </p>
+    </footer>
+    
+
+    <script defer src="../components/nav.js"></script>
+  </body>
+</html>

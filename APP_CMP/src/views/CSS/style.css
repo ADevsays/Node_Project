@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    /*===== Colors =====*/
+    --body-color: rgb(226 232 240);
+    --sidebar-color: #ffffff;
+    --primary-color: rgb(55 48 163);
+    --primary-color-light: rgb(238 242 255);
+    --toggle-color: #ddd;
+    --text-color: #707070;
+
+    /*=====Transitions=====*/
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+body{
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+.sidebar{
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+}
+.sidebar .text{
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+:hover.decoration-transparent{
+    background: var(--primary-color);
+    
+}
+.arrow{
+    color: var(--sidebar-color);
+    background: var(--primary-color);
+    cursor: pointer;
+}
+.search-box, .searchInput{
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+.icon, .text{
+    color: var(--text-color);
+}
+.mode{
+    background: var(--primary-color-light);
+}
+
+/*=====Reutilizable=====*/
+.sidebar .image {
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+
+/*=====Dark Mode=====*/
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #ffffff;
+    --text-color: #efefef;
+}
+.sidebar.close{
+    width: 88px;
+}
+.close .text{
+    opacity: 0;
+}
+body.dark .switch::before{
+    left: 29px;
+}
+.sidebar header .toggle{
+    transition: var(--tran-03);
+}
+.sidebar.close header .toggle{
+    transform: translateY(-50%) rotate(180deg);
+}
+body.dark .sidebar header .toggle, .searchInput{
+    color: var(--text-color);
+}
+body.dark .menu-bar .mode i.sun{
+    opacity: 1;
+}
+body.dark .menu-bar .mode i.moon{
+    opacity: 0;
+}
+
+/*=====Navbar=====*/
+
+.function{
+    margin-top: -2px;
+}
+.sidebar li a .icon2,
+.sidebar li a .text{
+    transition: var(--tran-02);
+}
+.sidebar li .icon{
+    min-width: 60px;
+}
+.sidebar li a{
+    transition: var(--tran-04);
+}
+.sidebar li a:hover .icon2,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .icon2,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+}
+.sidebar .menu{
+    margin-top: 30px;
+}
+.sidebar .menu-bar{
+    height: calc(100% - 70px);
+}
+.menu-bar .mode i{
+    transition: var(--tran-03);
+}
+.menu-bar .mode .toggle-switch{
+    background-color: var(--primary-color-light);
+    position: absolute;
+    min-width: 60px;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 25px;
+    width: 50px;
+    background: var(--toggle-color);
+    transition: var(--tran-05);
+}
+.switch::before{
+    content: '';
+    transition: var(--tran-05);
+    background: var(--sidebar-color);
+}
+.home{
+    width: calc(100% - 288px);
+    background: var(--body-color);
+    left: 288px;
+    transition: var(--tran-05);
+}
+.home .text{
+    color: var(--text-color);
+}
+.sidebar.close ~ .home{
+    width: calc(100% - 88px);
+    left: 88px;
+}
+
+/*-----Formularios-----*/
+
+

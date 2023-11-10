@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href='/CSS/styles.css'>
+    <link rel="Icon" type="image/x-icon" href="/IMG/LogoFavicon.svg">
+    <title>CPM-EIM</title>
+</head>
+<body>
+    <div class="pagina_inicial bg-opacity-70 bg-cover bg-no-repeat min-h-screen">
+        <div class="pagina_inicial_2 bg-cover h-screen">
+            <div class="p-2">
+                <nav id="navegacion" class="flex h-24 px-6 py-2 justify-between text-center rounded-md transition mx-auto">
+                    
+                </nav>
+            </div>
+
+            <div class="w-10/12 m-auto pt-2 left-0 right-0 bottom-0  sm:flex flex-col font-serif">
+                <h1 class="text-indigo-50 pb-4 text-3xl text-center rounded-md justify-center font-bold md:text-2xl py-6 lg:text-4xl">
+                     Ingrese al sistema
+                </h1>
+            </div>
+                
+            <div class="pt-8 max-w-4xl flex mx-auto justify-center items-center px-4">
+                <form id="formulario" class="flex flex-col w-8/12 gap-4 bg-indigo-950 p-4 rounded-lg text-lg shadow-xl md:4/12">
+                    <div class="flex flex-col gap-2">
+                        <label for="email-input" class="font-bold text-white">
+                        Email: <span class="text-red-600">*</span>
+                        </label>
+                        <input type="email"
+                        id="email-input"
+                        autocomplete="on"
+                        placeholder="email@ejemplo.com"
+                        required
+                        class="rounded-lg p-2 focus:outline outline-2 outline-blue-600 text-gray-900">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="password-input" class="font-bold text-white">
+                            Contraseña: <span class="text-red-600">*</span>
+                        </label>
+                        <input type="password"
+                        id="password-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su contraseña"
+                        required
+                        class="rounded-lg p-2 focus:outline outline-2 outline-blue-600 text-gray-900">
+                        <div class="flex gap-2 pt-2 pb-6">
+                            <input type="checkbox" id="show-password-checkbox" class="text-blue-950 w-6">
+                            <p class="text-xs font-semibold text-yellow-50 md:text-sm">
+                                Presione para ver su contraseña
+                            </p>
+                        </div>
+                        <span id="mensajeError" class="text-red-600 text-center"></span>
+                    </div>
+            
+                    <button id="form-btn" disabled class="bg-blue-950 px-4 rounded-lg text-white hover:bg-blue-400 py-2 font-bold transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"> Iniciar sesion</button>
+                </form>
+            </div>
+    
+
+        </div>
+    </div>
+    
+    <footer class="p-0 h-10">
+        <p
+          class="bg-indigo-950 text-indigo-50 text-sm text-center py-3 font-bold">
+          Sistema-GMP. &copy;
+        </p>
+    </footer>
+        
+    
+    <script src="../components/nav.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+    color: black;
+}
+
+p{
+   display: flex;
+   justify-items: center;
+   justify-content: center; 
+}
+
+h3{
+    font-size: large;
+    font-weight:400;
+}
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+                                                            /* CABECERA */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+h1{
+    font-size: x-large;
+}
+
+h2, p {
+    font-size: large;
+}
+
+#numeroPlanilla p,
+#firma1Planilla p,
+#firma2Planilla p,
+#unidadEjecDatosPlanilla p {
+    font-size: medium;
+}
+
+.logoUCV img {
+    width: 90px;
+}
+
+.Titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.Titulo h1 {
+    font-weight: normal;
+}
+
+.Subtitulo {
+    padding-bottom: 63px;
+}
+
+.Subtitulo h1 {
+    font-weight: normal;
+}
+
+#numeroPlanilla{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 15px;
+    padding-right: 50px;
+}
+
+#numeroPlanilla p {
+    width: 160px;
+}
+
+                                                                /* GRID LAYOUT */
+
+#sectionPlanilla {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 45px 150px 150px 150px
+                        200px 45px 200px 200px;
+    grid-template-areas: 
+        "titulo titulo titulo titulo fecha fecha"
+        "departamento departamento departamento catedra catedra catedra"
+        "movimiento movimiento actual actual propuesta propuesta"
+        "sueldo unidad unidad lapso categoria categoria"
+        "justificacion justificacion justificacion justificacion justificacion justificacion"
+        "anexos anexos anexos anexos anexos anexos"
+        "Firma1 Firma1 Firma1 Firma2 Firma2 Firma2"
+        "unidadEjecutora unidadEjecutora unidadEjecutora observacionPresu observacionPresu observacionPresu";
+
+    width: 900px;
+    justify-content: center;
+    margin: 0 auto 50px auto;
+}
+
+#tituloPlanilla {
+    grid-area: titulo;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fechaPlanilla {
+    grid-area: fecha;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#departamentoPlanilla {
+    grid-area: departamento;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#departamentoPlanilla :first-child{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 0 0 20px 5px;
+}
+
+#departamentoPlanilla h2 {
+    padding: 0 0 20px 5px;
+}
+
+#catedraPlanilla {
+    grid-area: catedra;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#catedraPlanilla :first-child{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 0 0 20px 5px;
+}
+
+#catedraPlanilla h2 {
+    padding: 0 0 20px 5px;
+
+}
+
+#movimientoPlanilla {   
+    grid-area: movimiento; 
+    border: 1px solid black;
+
+}
+
+#movimientoPlanilla :first-child{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#dedicacionActPlanilla {
+    grid-area: actual;
+    border: 1px solid black;
+
+}
+
+#dedicacionActPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#dedicacionProPlanilla {
+    grid-area: propuesta;
+    border: 1px solid black;
+
+}
+
+#dedicacionProPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#sueldoPlanilla {
+    grid-area: sueldo;
+    border: 1px solid black;
+
+}
+
+#sueldoPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#unidadEjecPlanilla {
+    grid-area: unidad;
+    border: 1px solid black;
+
+}
+
+#unidadEjecPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#lapsoPlanilla {
+    grid-area: lapso;
+    border: 1px solid black;
+}
+
+#lapsoPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#categoriaPlanilla {
+    grid-area: categoria;
+    border: 1px solid black;
+
+}
+
+#categoriaPlanilla :first-child {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 20px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#observacionesPlanilla {
+    grid-area: justificacion;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#observacionesPlanilla p {
+    padding-left: 10px;
+
+}
+
+#observacionesPlanilla h3 {
+    padding-left: 10px;
+
+}
+
+.contactoIdac {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} 
+
+.contactoIdac :first-child {
+    margin-right: 100px;
+}
+
+.datosIngreso {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.datosIngreso :first-child {
+    margin-right: 80px;
+}
+
+.datosIngreso :last-child {
+    margin-left: 80px;
+}
+
+#anexosPlanilla {
+    grid-area: anexos;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#firma1Planilla {
+    grid-area: Firma1;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+#firma2Planilla {
+    grid-area: Firma2;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+#unidadEjecDatosPlanilla {
+    grid-area: unidadEjecutora;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+}
+
+#observacionPresupuestoPlanilla {
+    grid-area: observacionPresu;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <select name="departamentoPersonal" id="departamentoPersonal"
+        class="border-none outline-none p-1 rounded-md bg-slate-50 text-base font-base text-indigo-950 w-full lg:5/12 text-center sm:text-start">
+        <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900" selected>Seleccionar</option>
+        <option value="716000" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ADMINISTRATIVO</option>
+        <option value="716020" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ALEMÁN</option>
+        <option value="716030" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">FRANCÉS</option>
+        <option value="716040" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">INGLÉS</option>
+        <option value="716050" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ITALIANO</option>
+        <!-- <option value="716060" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">RUSO</option> -->
+        <option value="716070" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">ESTUDIOS GENERALES</option>
+        <option value="716080" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">PORTUGUÉS</option>
+        <option value="716090" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-900">TRADUCCIÓN E INTERPRETACIÓN
+        </option>
+    </select>
+
+    <script>
+        const $ = query => document.querySelector(query);
+        const select = $('#departamentoPersonal');
+        select.addEventListener('change', (e) => {
+            const select = e.target;
+            const optionValue = select.value;
+            const allOptions = [...select.options];
+            allOptions.forEach(option => {
+                if (option.value == optionValue) {
+                    console.log(option.textContent)
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <!--BOXICONS CSS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="Icon" type="image/x-icon" href="/IMG/LogoFavicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Planillas</title>
+</head>
+<body class="h-screen">
+    <nav class="sidebar fixed top-0 left-0 h-full w-72 py-2 px-4 font-medium text-base close z-50">
+        <header class="flex items-center relative">
+            <div class="image-text flex items-center">
+                    <span class="image">
+                        <img src="/IMG/logo trans.svg" alt="Logo_CPM" 
+                        class="logo bg-indigo-800 w-14 rounded-lg p-1 flex items-center justify-center">
+                    </span>
+                    <div class="text header-text font-medium text-base flex flex-col">
+                            <span class="name font-semibold">Admin Panel - GMP</span>
+                            <span class="Funcion">Personal</span>
+                    </div>
+    
+                    <i class='arrow bx bx-chevron-right toggle absolute top-1/2 -right-7 -translate-y-2.5
+                    h-6 w-6 flex items-center justify-center rounded-xl text-base'></i> 
+                </div>
+        </header>
+
+        <div class="menu-bar flex flex-col justify-between">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="search-box h-12 mt-2 list-none flex items-center rounded-r-md rounded-l-md">
+                        <h2 class="pl-1" id="nameBienvenida">
+                            
+                        </h2>
+                    </li>
+                    <li class="nav-link h-12 mt-2 list-none flex items-center bg-indigo-800 rounded-lg">
+                        <a href="/planillas/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Planillas">
+                            <i class='icon icon2 bx bx bx-spreadsheet text-xl flex items-center justify-center text-white'> </i>
+                            <span class="text nav-text text-white">Planillas</span>
+                        </a>
+                    </li>
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="/usuarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Usuarios">
+                            <i class='icon icon2 bx bxs-user-detail text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="/personal/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Personal EIM">
+                            <i class='icon icon2 bx bxs-user-account text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Personal EIM</span>
+                        </a>
+                    </li>
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="/salarios/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Salarios">
+                            <i class='icon icon2 bx bx-money-withdraw text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Tablas de Salarios</span>
+                        </a>
+                    </li>
+                    <li class="nav-link h-12 mt-2 list-none flex items-center">
+                        <a href="/notificaciones/index.html" class="decoration-transparent h-full rounded-md flex items-center w-full" title="Notificaciones">
+                            <i class='icon icon2 bx bx-bell text-xl flex items-center justify-center'> </i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="nav-link h-12 mt-2 list-none flex items-center">
+                    <a href="http://localhost:4000/" class="decoration-transparent h-full rounded-md flex items-center w-full " title="Salir">
+                        <i class='icon icon2 bx bx-log-out text-xl flex items-center justify-center'> </i>
+                        <span class="text nav-text">Salir</span>
+                    </a>
+                </li>
+
+                <li class="mode nav-link h-12 mt-2 list-none flex items-center -mr-1 relative rounded-md">
+                    <div class="moon-sun h-12 w-14 flex items-center">
+                        <i class='icon icon2 moon bx bx-moon text-xl flex items-center justify-center absolute'> </i>
+                        <i class='icon icon2 sun bx bx-sun text-xl flex items-center justify-center absolute opacity-0'> </i>
+                    </div>
+                    <span class="mode-text text ">Dark Mode</span>
+
+                    <div class="toggle-switch h-full flex items-center justify-center cursor-pointer right-0 rounded-r-md rounded-l-md">
+                        <span class="switch rounded-3xl before:h-4 before:w-4 before:absolute before:rounded-full before:top-1/2
+                        before:left-1 before:transform before:-translate-y-1/2"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+    </nav>
+
+    <section id="section" class="home h-full relative">
+
+        <div class="ml-2 rounded-md h-screen">
+
+            <div class="text text-2xl font-semibold mt-10 px-16 flex text-center justify-center">
+                Nueva Solicitud de Movimiento de Personal
+            </div>
+
+            <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col">
+                <h2 class="pb-2 px-auto text-indigo-950 font-semibold text-base flex justify-center">
+                    Selecciona para generar una nueva solicitud:
+                </h2>
+                <select name="multiple" id="Planillas" class="rounded-md outline-none border-2 border-indigo-800/70 flex justify-center p-1
+                bg-slate-50 text-indigo-900 font-normal mx-auto">
+                    <option value="" selected class=" sm:mx-auto font-normal text-base pl-1 bg-slate-50 text-indigo-900" selected> Seleccionar </option>
+                    <option value="Nueva_Planilla" class=" sm:mx-auto font-normal text-base pl-1 bg-slate-50 text-indigo-900"> Generar Nueva Planilla </option>
+                </select>
+            </div>
+
+            <div id="section_2" class="hidden"> <!--Agregar Hidden-->
+
+                <form id="formularioPlanilla" class="flex flex-col gap-1 justify-around mx-auto text-center lg:items-center w-6/12 md:w-11/12">
+
+                    <!-- NOMBRE APELLIDO Y CEDULA -->
+                    <div class="my-2 flex flex-col justify-center text-center md:w-6/12 lg:w-5/12 mx-auto md:mt-8">
+
+                        <div class="flex flex-col items-center w-full mb-2">
+                                <label for="cedula-input" class="font-semibold justify-start my-auto text-indigo-950 flex">
+                                    N° Cédula <span class="text-red-600 text-lg mr-1 my-auto">*</span>
+                                </label>
+                                <div class="flex flex-row w-full">
+                                    <input 
+                                        type="text"
+                                        id="cedula-input"
+                                        autocomplete="off"
+                                        placeholder="Ingrese la Cédula"
+                                        class="rounded-l-md text-base md:text-lg focus:outline-none py-2 pl-1 text-center w-full tracking-widest font-semibold">
+                                        <div id="btnbuscarCedula" class="bg-indigo-950 p-1 rounded-r-md cursor-pointer">
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);">
+                                                <path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 
+                                                9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 
+                                                1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z">
+                                                </path>
+                                            </svg>  
+
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="flex flex-col w-full items-center my-4">
+
+                                <label for="fullName-input" class="font-semibold my-auto p-1 ml-3 text-indigo-950 flex justify-center w-full">
+                                    Nombre y Apellido:
+                                </label>
+                                <input 
+                                    type="text"
+                                    id="fullName-input"
+                                    autocomplete="off"
+                                    readonly
+                                    class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                            text-center tracking-widest font-semibold">
+                        </div>
+                    
+                    </div>
+
+                    <!-- DEPARTAMENTO CATEDRA CATEGORIA F. DE INGRESO -->
+                    <div class="flex flex-col lg:flex-row gap-2 p-2 lg:w-full">
+
+                        <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                                        <label for="departamentoPlanilla" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                            Departamento:
+                                        </label>
+                                        <input type="text"
+                                        id="departamentoPlanilla"
+                                        class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                                text-center tracking-widest font-semibold">
+                        </div>
+
+                        <div id="mostrarCatedra" class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                                        <label for="catedraPlanilla" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                            Cátedra:
+                                        </label>
+                                        <input type="text"
+                                        id="catedraPlanilla"
+                                        class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                                text-center tracking-widest font-semibold">                    
+                        </div>
+                        
+                        <div id="mostrarCategoria" class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                                        <h2 class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                            Seleccione la Categoria:
+                                        </h2>
+                                        <select name="Categoria" id="Categoria" class="rounded-md outline-none border-2 border-indigo-800/70 flex justify-center p-1
+                                        bg-slate-50 text-indigo-900 font-normal">
+                                            <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950" selected>Seleccionar</option>
+                                            <option value="TITULAR" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">TITULAR</option>
+                                            <option value="ASOCIADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASOCIADO</option>
+                                            <option value="AGREGADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AGREGADO</option>
+                                            <option value="ASISTENTE" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASISTENTE</option>
+                                            <option value="INSTRUCTOR" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INSTRUCTOR</option>
+                                            <option value="DOCENTE TEMPORAL" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">DOCENTE TEMPORAL</option>
+                                            <option value="TITULAR VIA ADMINISTRATIVA" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">TITULAR VIA ADMINISTRATIVA</option>
+                                            <option value="ASOCIADO VIA ADMINISTRATIVA" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASOCIADO VIA ADMINISTRATIVA</option>
+                                            <option value="AGREGADO VIA ADMINISTRATIVA" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AGREGADO VIA ADMINISTRATIVA</option>
+                                            <option value="ASISTENTE VIA ADMINISTRATIVA" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASISTENTE VIA ADMINISTRATIVA</option>
+                                            <option value="INSTRUCTOR VIA ADMINISTRATIVA" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INSTRUCTOR VIA ADMINISTRATIVA</option>
+                                            <option value="INSTRUCTOR SUPLENTE" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INSTRUCTOR SUPLENTE</option>
+                                            <option value="INSTRUCTOR CONTRATADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INSTRUCTOR CONTRATADO</option>
+                                            <option value="ASISTENTE CONTRATADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASISTENTE CONTRATADO</option>
+                                            <option value="AGREGADO CONTRATADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AGREGADO CONTRATADO</option>
+                                            <option value="ASOCIADO CONTRATADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ASOCIADO CONTRATADO</option>
+                                            <option value="TITULAR CONTRATADO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">TITULAR CONTRATADO</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL I" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL I</option>
+                                            <option value="AUXILIAR DOCENTE" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE</option>
+                                            <option value="PREPARADOR" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">PREPARADOR</option>
+                                            <option value="ATS" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">ATS</option>
+                                            <option value="OBRERO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">OBRERO</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL I" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL I</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL II" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL II</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL III" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL III</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL IV" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL IV</option>
+                                            <option value="AUXILIAR DOCENTE NIVEL V" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">AUXILIAR DOCENTE NIVEL V</option>
+                                        </select>
+                        </div>
+
+                        <div id="mostrarFecha" class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                            <h2 class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                Fecha de Ingreso:
+                            </h2>
+                            <div name="Ingreso" id="Ingreso" class="rounded-md outline-none border-2 border-indigo-800/70 flex justify-center p-1
+                            bg-slate-50 text-indigo-900 font-normal">
+                                <input type="date" id="FechaIngreso" class="font-normal md:text-base pl-1 bg-slate-50 w-full text-indigo-900 outline-none">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- T. MOVIMIENTO DED. ACTUAL DED PROP -->
+                    <div id="mostrarMovDedicPropuesta" class="flex flex-col lg:flex-row gap-2 p-2 lg:w-full">
+
+                                <div class="text-lg pt-5 py-1 mx-auto flex text-center justify-center flex-col w-full">
+                                    <h2 class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                        Seleccione el tipo de Movimiento:
+                                    </h2>
+                                    <select name="Movimiento" id="Movimiento" class="rounded-md outline-none border-2 border-indigo-800/70 flex justify-center p-1
+                                    bg-slate-50 text-indigo-900 font-normal">
+                                        <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950" selected>Seleccionar</option>
+                                        <option value="PRÓRROGAS DE CONTRATO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">PRÓRROGAS DE CONTRATO</option>
+                                        <option value="INGRESO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">INGRESO</option>
+                                        <option value="CAMBIO DENOMINACIÓN DE CARGO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">CAMBIO DENOMINACIÓN DE CARGO</option>
+                                        <option value="NOMBRAMIENTO DEFINITIVO" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">NOMBRAMIENTO DEFINITIVO</option>
+                                        <option value="RETIROS" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">RETIROS</option>
+                                        <option value="RENUNCIAS" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">RENUNCIAS</option>
+                                    </select>
+                                </div>
+                                <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                                    <label for="dedicacionAct" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                        Dedicación Actual:
+                                    </label>
+                                    <input type="text"
+                                    id="dedicacionAct"
+                                    class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                            text-center tracking-widest font-semibold">
+                                </div>
+                                <div class="text-lg pt-5 py-1 mx-auto flex text-center justify-center flex-col w-full">
+                                    <h2 class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                        Seleccione la Dedicación Propuesta:
+                                    </h2>
+                                    <select name="dedicacionProp" id="dedicacionProp" class="rounded-md outline-none border-2 border-indigo-800/70 flex justify-center p-1
+                                    bg-slate-50 text-indigo-900 font-normal">
+                                    <option value="" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950" selected>Seleccionar</option>
+                                    <option value="Exclusiva" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Exclusiva</option>
+                                    <option value="Tiempo Completo" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Tiempo Completo</option>
+                                    <option value="Medio Tiempo" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Medio Tiempo</option>
+                                    <option value="3" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 3 Horas</option>
+                                    <option value="4" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 4 Horas</option>
+                                    <option value="5" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 5 Horas</option>
+                                    <option value="6" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 6 Horas</option>
+                                    <option value="7" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 7 Horas</option>
+                                    <option value="8" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 8 Horas</option>
+                                    <option value="9" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 9 Horas</option>
+                                    <option value="10" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 10 Horas</option>
+                                    <option value="11" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 11 Horas</option>
+                                    <option value="12" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 12 Horas</option>
+                                    <option value="13" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 13 Horas</option>
+                                    <option value="16" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Convencional Docente 16 Horas</option>
+                                    <option value="Docente Invitado" class="font-normal text-sm pl-1 bg-slate-50 text-indigo-950">Docente Invitado</option>
+                                </select>
+                                </div>
+                                <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                                    <label for="salarioPlanilla" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                        Salario:
+                                    </label>
+                                    <input type="text"
+                                    id="salarioPlanilla"
+                                    class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                            text-center tracking-widest font-semibold">
+                                </div>
+                            
+                    </div>
+
+                    <!-- T. IDAC UNIDAD EJECUCION -->
+                    <div id="seccionIdacUnidadEje" class="flex flex-col lg:flex-row gap-2 p-2 lg:w-full">
+
+                        <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                            <label for="Idac" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                Idac:
+                            </label>
+                            <input type="text"
+                            id="Idac"
+                            class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                    text-center tracking-widest font-semibold">
+                        </div>
+
+                        <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                            <label for="unidadEjecutora" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                Unidad Ejecutora:
+                            </label>
+                            <input type="text"
+                            id="unidadEjecutora"
+                            class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                    text-center tracking-widest font-semibold">
+                        </div>
+
+                        <div class="text-lg pt-5 mx-auto flex text-center justify-center flex-col w-full">
+                            <label for="numeroPlanilla" class="pb-1 ml-2 text-indigo-950 font-semibold text-base flex justify-start">
+                                Número de planilla:
+                            </label>
+                            <input type="text"
+                            id="numeroPlanilla"
+                            class="rounded-md text-sm cursor-not-allowed bg-indigo-200 border border-gray-700 outline-none h-10 md:text-base w-full
+                                    text-center tracking-widest font-semibold">
+                        </div>
+
+                    </div>
+
+                    <!-- BOTON PARA GENERAR PLANILLA -->
+                    <div id="mostrarbtnGenerar" class="flex flex-row items-end justify-center py-5 mt-5">
+
+                        <button id="btn_planilla"
+                        type="button" 
+                        class="hidden text-center p-3 text-base font-semibold text-indigo-950 bg-slate-50
+                        rounded-md active:p-2.5 active:bg-indigo-950 border-2 border-indigo-950
+                        active:text-slate-50 active:font-semibold hover:bg-indigo-700 hover:text-slate-100" >
+                            Generar planilla de movimiento
+                        </button>
+                                    
+                    </div>
+
+                </form>  
+
+            </div>
+
+        </div>
+        
+    </section>
+
+    <footer class="p-0 h-10 hidden">
+        <p
+          class="bg-indigo-950 text-indigo-50 text-sm text-center py-3 font-bold">
+          Sistema-GMP. &copy;
+        </p>
+    </footer>
+
+
+    <script src="../styles.js"></script>
+    <script src="planillas.js"></script>
+</body>
+</html>
