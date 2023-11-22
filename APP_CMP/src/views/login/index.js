@@ -6,7 +6,6 @@ import postUsers from "../../services/Users/postUsers";
 //const User = require('../models/user');
 const $ = query=> document.querySelector(query);
 
-const formulario = $('#formulario');
 const showPassword = $('#show-password-checkbox');
 const emailInput = $('#email-input');
 const passwordInput = $('#password-input');

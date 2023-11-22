@@ -1,0 +1,1 @@
+export const optionTemplateToChange = "Nueva_Planilla";
